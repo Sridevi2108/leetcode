@@ -1,0 +1,22 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        int_min,int_max=-2**31,2**31-1
+        original = x
+        val = 0
+        rev = 0
+        if (original<0):
+            original=-original
+        while(original>0):
+            val = original % 10
+            rev = rev *10+val
+            original=original//10
+        if (x<0):
+            rev=-rev
+        if rev<int_min or rev>int_max:
+            return 0
+        return rev
+
+            
+
+
+        
