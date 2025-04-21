@@ -1,0 +1,19 @@
+class Solution:
+    def findMaxLength(self, nums: List[int]) -> int:
+        max_len=0
+        balance=0
+        prefix_map={0:-1}
+        for i in range(len(nums)):
+            if nums[i]==0:
+                balance-=1
+            else:
+                balance+=1
+            if balance in prefix_map:
+                length=i-prefix_map[balance]
+                max_len=max(max_len,length)
+            else:
+                prefix_map[balance]=i
+        return max_len
+        
+
+        
