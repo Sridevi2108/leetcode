@@ -1,0 +1,27 @@
+class Solution:
+    def calculateScore(self, instructions: List[str], values: List[int]) -> int:
+        score=0
+        hashmap={}
+        i=0
+        while 0<=i<len(values):
+            if i in hashmap:
+                break
+            if i>=len(instructions):
+                break
+            if i not in hashmap:
+                if instructions[i] == "jump":
+                    hashmap[i]= True
+                    i+=values[i]
+                elif instructions[i] == "add":
+                    hashmap[i]= True
+                    score+=values[i]
+                    i+=1
+                else:
+                    break
+            else:
+                break
+                
+            
+        return score
+                
+        ©leetcode
