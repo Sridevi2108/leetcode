@@ -1,0 +1,14 @@
+class Solution:
+    def maxProduct(self, n: int) -> int:
+        lst=[]
+        res=1
+        while(n>0):
+            val=n%10
+            lst.append(val)
+            n=n//10
+        maxproduct=0
+        for i in range(len(lst)):
+            for j in range(i+1,len(lst)):
+                product=lst[i]*lst[j]
+                maxproduct=max(product,maxproduct)
+        return maxproduct©leetcode
