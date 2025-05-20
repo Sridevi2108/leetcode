@@ -1,0 +1,14 @@
+class Solution:
+    def checkSubarraySum(self, nums: List[int], k: int) -> bool:
+        prefix_sum=0
+        prefix_map={0:-1}
+        for i,num in enumerate(nums):
+            prefix_sum+=num
+            rem=prefix_sum%k if k!=0 else prefix_sum
+            if rem in prefix_map:
+                if i-prefix_map[rem]>=2:
+                    return True
+            else:
+                prefix_map[rem]=i
+        return False
+        
