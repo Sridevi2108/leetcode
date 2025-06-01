@@ -1,0 +1,10 @@
+class Solution:
+    def distributeCandies(self, n: int, limit: int) -> int:
+        count=0
+        for a in range(min(n,limit)+1):
+            s=n-a
+            if 0<=s<=limit:
+                count+=s+1
+            elif limit<s<=2*limit:
+                count+=2*limit-s+1
+        return count
