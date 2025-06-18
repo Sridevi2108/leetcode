@@ -3,3 +3,13 @@ class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
         return math.comb(m+n-2,m-1)
         
+#another solution
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        def factorial(n):
+            res=1
+            for i in range(2,n+1):
+                res*=i
+            return res
+        return factorial(m+n-2)//(factorial(m-1)*factorial(n-1))
+        
