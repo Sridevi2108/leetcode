@@ -1,0 +1,19 @@
+class Solution:
+    def minCost(self, startPos: List[int], homePos: List[int], rowCosts: List[int], colCosts: List[int]) -> int:
+        totalcost=0
+        r1,c1=startPos
+        r2,c2=homePos
+        if r1<r2:
+            for row in range(r1+1,r2+1):
+                totalcost+=rowCosts[row]
+        else:
+            for row in range(r1-1,r2-1,-1):
+                totalcost+=rowCosts[row]
+        if c1<c2:
+            for col in range(c1+1,c2+1):
+                totalcost+=colCosts[col]
+        else:
+            for col in range(c1-1,c2-1,-1):
+                totalcost+=colCosts[col]
+        return totalcost
+        
