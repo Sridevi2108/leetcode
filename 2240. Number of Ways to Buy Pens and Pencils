@@ -1,0 +1,10 @@
+class Solution:
+    def waysToBuyPensPencils(self, total: int, cost1: int, cost2: int) -> int:
+        count=0
+        maxpens=total//cost1 if cost1!=0 else 0
+        for pens in range(maxpens+1):
+            remaining=total-pens*cost1
+            maxpencil=remaining//cost2 if cost2!=0 else 0
+            count=count+maxpencil+1
+        return count
+        
