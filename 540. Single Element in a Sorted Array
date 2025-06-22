@@ -1,0 +1,14 @@
+class Solution:
+    def singleNonDuplicate(self, nums: List[int]) -> int:
+        num_set={}
+        for num in nums:
+            if num in num_set:
+                num_set[num]+=1
+            else:
+                num_set[num]=1
+        for num,count in num_set.items():
+            if count==1:
+                return num
+
+
+        
