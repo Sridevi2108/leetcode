@@ -1,0 +1,15 @@
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        lst=[]
+        hashset={}
+        for num in nums:
+            if num in hashset:
+                hashset[num]+=1
+            else:
+                hashset[num]=1
+        sorted_items=sorted(hashset.items(),key=lambda x:x[1],reverse=True)
+        for i in range(k):
+            lst.append(sorted_items[i][0])
+        return lst
+
+        
