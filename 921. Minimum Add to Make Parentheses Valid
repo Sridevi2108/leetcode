@@ -1,0 +1,15 @@
+class Solution:
+    def minAddToMakeValid(self, s: str) -> int:
+        openparen=0
+        closeparen=0
+        for ch in s:
+            if (ch=='('):
+                openparen+=1
+            elif (ch==')' and openparen>0):
+                openparen-=1
+            else:
+                closeparen+=1
+        return openparen+closeparen
+
+
+        
