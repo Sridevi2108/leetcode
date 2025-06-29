@@ -1,0 +1,21 @@
+class Solution:
+    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+        #given binary array
+        #if 1 & 1 -> return 1+1 ->2
+        #if 1,1,1->return 3
+        #if 0 found ignore then check next return max 1
+        lst=[]
+        count=0
+        for i in range(len(nums)):
+            if nums[i]==1:
+                count+=1
+                lst.append(count)
+            elif nums[i]==0:
+                count=0
+                lst.append(count)
+        return max(lst)
+
+        
+
+            
+        
